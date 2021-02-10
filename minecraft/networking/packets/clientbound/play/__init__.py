@@ -239,6 +239,9 @@ class EntityPositionDeltaPacket(Packet):
             {'on_ground': Boolean},
         ]
 
+    delta_position = multi_attribute_alias(Vector, 
+        'delta_x_float', 'delta_y_float', 'delta_z_float')
+
     # The following transforms are retained for backward compatibility;
     # they represent the delta values as fixed-point integers with 12 bits
     # of fractional part, regardless of the protocol version.
